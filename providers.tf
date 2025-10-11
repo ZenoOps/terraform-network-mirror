@@ -7,7 +7,10 @@ terraform {
   }
 }
 
+locals {
+  aws_region = "ap-southeast-2"  # Change to your preferred region if needed
+}
 provider "aws" {
-  region = var.aws_region
+  region = local.aws_region
   shared_credentials_files = ["/home/zeno/.aws/credentials"] # replace with your own PATH
 }
